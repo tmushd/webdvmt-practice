@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selection Sort</title>
+    <style>
+        #code {
+            font-size: 15px; /* General font size for the paragraph */
+            text-align: left; /* Align text to the left */
+            white-space: pre; /* Preserve whitespace */
+            overflow: auto; /* Enable scrolling if content overflows */
+        }
+
+        .variable-class {
+            color: purple;
+        }
+
+        .argument-class {
+            color: red;
+        }
+
+        .function-class {
+            color: blue;
+        }
+		
+		.indentation-of-input-point
+    </style>
+</head>
+
+<body>
+    <h1>Sorting Algorithms 1: Selection Sort</h1>
+    <p>
+        <b><u>Selection sort</u></b> is a <em>sorting algorithm</em> that treats the input as two parts, a sorted part and an unsorted part 
+        and repeatedly selects the proper next value to move from the unsorted part to the end of the sorted part. 
+    </p>
+    
+    <pre id="code">
+        <code>
+            <span class="variable-class">def</span> <span class="function-class">selection_sort</span>(<span class="argument-class">numbers</span>):
+                <span class="variable-class">for</span> i <span class="variable-class">in</span> <span class="variable-class">range</span>(<span class="variable-class">len</span>(<span class="argument-class">numbers</span>) - 1):
+                    index_lowest = i
+                    <span class="variable-class">for</span> j in <span class="variable-class">range</span>(i + 1, <span class="variable-class">len</span>(<span class="argument-class">numbers</span>)):
+                        <span class="variable-class">if</span> <span class="argument-class">numbers</span>[j] &lt; <span class="argument-class">numbers</span>[index_lowest]:
+                            index_lowest = j
+                    temp = <span class="argument-class">numbers</span>[i]
+                    <span class="argument-class">numbers</span>[i] = <span class="argument-class">numbers</span>[index_lowest]
+                    <span class="argument-class">numbers</span>[index_lowest] = temp
+                <span class="variable-class">return</span> <span class="argument-class">numbers</span>
+            </code>
+    </pre>
+<p>
+	<h2>Steps:</h2>
+	<ul>
+        <li>
+			<h3><u>Input:</u></h3> a list of numbers ex: [64, 25, 12, 22, 11]
+  		</li>
+	</ul>
+
+</p>
+
+<!-- the input section ends here -->
+
+<p>
+<ul>
+  <li>
+	  <u><h3>Variables:</h3></u></li>
+		<ul class="Hollow-circle-list">
+		<li><span class="argument-class"><u>numbers</u></span>: This is the list of numbers that will be sorted.</li><br>
+			
+		<li><span class="variable-class"><u>i</u></span>: This variable represents the index of the current element being considered as the smallest element in the unsorted part of the list. It starts from the first index (0) and moves towards the end of the list.</li><br>
+			
+		<li><span class="variable-class"><u>index_lowest</u></span>: This variable keeps track of the index of the smallest number found in the unsorted portion of the list. It is initialized to the value of i at the beginning of each iteration.</li><br>
+			
+		<li><span class="variable-class"><u>j</u></span>: This variable is used to iterate through the elements in the unsorted portion of the list, starting from the index i + 1 to the end of the list. It helps to find the smallest element.</li><br>
+			
+		<li><span class="variable-class"><u>temp</u></span>: This temporary variable is used for swapping elements. It stores the value of the element at index i before it is replaced by the smallest element found (at index_lowest).</li><br>
+		
+	  </ul>
+</ul>
+</p>
+<!-- the Variables section ends here-->
+
+<p>
+<ul><li>
+	<h3><u>Sorting Process:</u></h3>
+<ol>
+	<li>For each element i from the beginning of the list to the second last element:</li>
+	<br>
+		<ul>
+			<li>Initialize <u><i>index_lowest</i></u> to <u><i>i</i></u>.</li>
+			<li>Compare the element at <u><i>index_lowest</i></u> with each subsequent element (using <u><i>j</i></u>).</li>
+			<li>If a smaller element is found (i.e., <u><i>numbers[j]</i></u> &lt; <u><i>numbers[index_lowest])</i></u>, update <u><i>index_lowest</i></u> to <u><i>j</i></u>.</li>
+    	</ul>
+	<br>
+	
+	<li>After the inner loop finishes, swap the smallest element found with the element at index <i>i</i>:</li>
+	<br>
+		<ul>
+		  <li>Store <u><i>numbers[i]</i></u> in temp.</li>
+		  <li>Set <u><i>numbers[i]</i></u> to <u><i>numbers[index_lowest]</i></u>.</li>
+		  <li>Set <u><i>numbers[index_lowest]</i></u> to temp.</li>
+    </ul>
+</ol>
+</li></ul>
+</p>
+	
+<p>
+	
+</p>
+
+
+<p> 
+	<div>
+		<cite>
+			"Selection sort is a simple yet powerful method, demonstrating <br> 
+			that sometimes the best way to find the minimum is to explore every option." - V
+		</cite>
+	</div>
+</p>
+
+
+<footer style="text-align: center; padding: 10px; background-color: #f4f4f4; border-top: 1px solid #ddd;">
+    <p>&copy; September 20, 2024 Vayundanreddy Pannala | Project #1 Chapter#2 </p>
+</footer>
+
+</body>
+</html>
